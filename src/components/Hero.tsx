@@ -38,8 +38,8 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Scroll down indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* Scroll down indicator - centered on mobile, at bottom on larger screens */}
+        <div className="absolute sm:bottom-8 bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce">
           <a href="#about" className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors">
             <span className="text-sm font-medium mb-2">Scroll Down</span>
             <ChevronDown className="w-5 h-5" />
