@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,7 +11,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -33,7 +33,9 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "py-3 glass border-b border-white/10 backdrop-blur-lg" : "py-5"
+        isScrolled
+          ? "py-3 glass border-b border-white/10 backdrop-blur-lg"
+          : "py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,9 +44,9 @@ const Navbar = () => {
           <a href="#" className="text-2xl font-bold text-gradient">
             David<span className="text-primary ml-1">Ngoma</span>
           </a>
-          
+
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-10">
+          <nav className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -55,10 +57,15 @@ const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
+            <ModeToggle />
           </nav>
-          
+
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
+          <button
+            className="md:hidden"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
             {isMenuOpen ? (
               <X className="w-6 h-6 text-foreground" />
             ) : (
@@ -67,11 +74,13 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Navigation */}
       <div
         className={`md:hidden absolute top-full left-0 right-0 p-4 glass-dark border-t border-white/10 backdrop-blur-lg transition-all duration-300 ${
-          isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+          isMenuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
         <nav className="flex flex-col space-y-4">
@@ -85,6 +94,9 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <div className="px-4 py-2">
+            <ModeToggle />
+          </div>
         </nav>
       </div>
     </header>
