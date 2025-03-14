@@ -1,10 +1,9 @@
-
 import React, { useEffect, useRef } from "react";
 import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 
 const Experience = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -16,15 +15,16 @@ const Experience = () => {
       },
       { threshold: 0.1 }
     );
-    
-    const animatedElements = sectionRef.current?.querySelectorAll(".animate-on-scroll");
+
+    const animatedElements =
+      sectionRef.current?.querySelectorAll(".animate-on-scroll");
     animatedElements?.forEach((el) => observer.observe(el));
-    
+
     return () => {
       animatedElements?.forEach((el) => observer.unobserve(el));
     };
   }, []);
-  
+
   const experienceData = [
     {
       type: "work",
@@ -37,8 +37,8 @@ const Experience = () => {
         "Operate molding and milling machines for acrylic and polycarbonate",
         "Design 2D drawings for ordering steel rule dies for cutting polymer optics",
         "Produce custom drawings for polymer optical parts per customer requirements",
-        "Program laser machine beam toolpaths using Coherent LIGHTCELL-150 software"
-      ]
+        "Program laser machine beam toolpaths using Coherent LIGHTCELL-150 software",
+      ],
     },
     {
       type: "work",
@@ -50,8 +50,8 @@ const Experience = () => {
         "Monitor production and run reports",
         "Record orders on computer systems",
         "Perform maintenance operations and maintain safe environment",
-        "Manage inventory"
-      ]
+        "Manage inventory",
+      ],
     },
     {
       type: "education",
@@ -61,8 +61,8 @@ const Experience = () => {
       period: "Jan 2022",
       description: [
         "Focused on quality control process evaluation and improvement",
-        "Developed skills in CAD, manufacturing processes, and engineering principles"
-      ]
+        "Developed skills in CAD, manufacturing processes, and engineering principles",
+      ],
     },
     {
       type: "education",
@@ -70,37 +70,38 @@ const Experience = () => {
       company: "Tarrant County College",
       location: "",
       period: "2019",
-      description: [
-        "Technical certification in IT fundamentals"
-      ]
-    }
+      description: ["Technical certification in IT fundamentals"],
+    },
   ];
-  
+
   return (
-    <section id="experience" className="py-24 bg-secondary/50" ref={sectionRef}>
+    <section id="experience" className="py-24 bg-muted/50" ref={sectionRef}>
       <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="section-title">Experience & Education</h2>
+          <h2 className="section-title text-foreground">
+            Experience & Education
+          </h2>
           <p className="section-subtitle mx-auto">
-            Professional journey and academic background that shaped my expertise in manufacturing engineering
+            Professional journey and academic background that shaped my
+            expertise in manufacturing engineering
           </p>
         </div>
-        
+
         <div className="max-w-3xl mx-auto">
           {experienceData.map((item, index) => (
-            <div 
-              key={index} 
-              className="timeline-item animate-on-scroll opacity-0" 
+            <div
+              key={index}
+              className="timeline-item animate-on-scroll opacity-0"
               style={{ animationDelay: `${0.2 * index}s` }}
             >
-              <div className="timeline-dot flex items-center justify-center">
+              <div className="timeline-dot flex items-center justify-center bg-primary">
                 {item.type === "work" ? (
-                  <Briefcase className="w-2 h-2 text-white" />
+                  <Briefcase className="w-2 h-2 text-primary-foreground" />
                 ) : (
-                  <GraduationCap className="w-2 h-2 text-white" />
+                  <GraduationCap className="w-2 h-2 text-primary-foreground" />
                 )}
               </div>
-              
+
               <div className="mb-1 flex items-center">
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
                   {item.type === "work" ? "Work" : "Education"}
@@ -110,10 +111,14 @@ const Experience = () => {
                   {item.period}
                 </div>
               </div>
-              
-              <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-              <p className="text-primary font-medium mb-3">{item.company} {item.location && `• ${item.location}`}</p>
-              
+
+              <h3 className="text-xl font-bold mb-1 text-foreground">
+                {item.title}
+              </h3>
+              <p className="text-primary font-medium mb-3">
+                {item.company} {item.location && `• ${item.location}`}
+              </p>
+
               <ul className="list-disc list-inside text-muted-foreground space-y-1 pl-1">
                 {item.description.map((desc, i) => (
                   <li key={i}>{desc}</li>
