@@ -32,7 +32,13 @@ const Projects = () => {
         "Designed and researched a sustainable welding table for saddle legs used in vessels for Parker Hannifin, focusing on durability and functionality.",
       image:
         "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-      tags: ["CAD Design", "Welding", "Sustainability", "Industrial Design"],
+      tags: [
+        "CAD Design",
+        "Welding",
+        "Sustainability",
+        "Industrial Design",
+        "Cobot Welding",
+      ],
       link: "#",
     },
     {
@@ -43,7 +49,7 @@ const Projects = () => {
         "https://images.unsplash.com/photo-1544724569-5f702431d06c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
       tags: [
         "Composite Materials",
-        "Aeronautics",
+        "Aerospace Industry",
         "Team Collaboration",
         "Precision Engineering",
       ],

@@ -63,10 +63,10 @@ const Contact = () => {
                     Email
                   </h4>
                   <a
-                    href="mailto:david.ngoma@example.com"
+                    href="mailto:ngomadavid261@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    david.ngoma@example.com
+                    ngomadavid261@gmail.com
                   </a>
                 </div>
               </div>

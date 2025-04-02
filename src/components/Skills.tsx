@@ -33,14 +33,16 @@ const Skills = () => {
         { name: "PowerCADD", level: 85 },
         { name: "AutoCAD Inventor", level: 80 },
         { name: "2D & 3D Drawing", level: 90 },
+        { name: "3D Printing", level: 80 },
       ],
     },
     {
       title: "Manufacturing",
       skills: [
-        { name: "Injection Molding", level: 85 },
-        { name: "CNC Mill", level: 80 },
-        { name: "Laser Beam", level: 75 },
+        { name: "Compression Molding", level: 92 },
+        { name: "Injection Molding", level: 55 },
+        { name: "CNC Mill", level: 90 },
+        { name: "Laser Beam", level: 94 },
         { name: "Quality Control", level: 85 },
         { name: "Process Planning", level: 80 },
       ],
@@ -49,7 +51,7 @@ const Skills = () => {
       title: "Professional",
       skills: [
         { name: "Project Management", level: 75 },
-        { name: "Technical Documentation", level: 85 },
+        { name: "Technical Documentation", level: 95 },
         { name: "Problem Solving", level: 90 },
         { name: "Team Leadership", level: 75 },
         { name: "French (Native)", level: 100 },
@@ -121,7 +123,7 @@ const Skills = () => {
 
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              "SOLIDWORKS",
+              "SolidWorks",
               "DraftSight",
               "PowerCADD",
               "AutoCAD",
@@ -136,6 +138,7 @@ const Skills = () => {
               "HMI Systems",
               "Process Control",
               "Database Design",
+              "3D printing",
             ].map((tech, index) => (
               <span
                 key={index}
