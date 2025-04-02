@@ -29,7 +29,7 @@ const Experience = () => {
     {
       type: "work",
       title: "Computer Aided Design Technician",
-      company: "Fresnel Technologies",
+      company: "Fresnel Technologies Inc.",
       location: "Fort Worth, Texas",
       period: "May 2024 - Present",
       description: [
@@ -38,6 +38,7 @@ const Experience = () => {
         "Design 2D drawings for ordering steel rule dies for cutting polymer optics",
         "Produce custom drawings for polymer optical parts per customer requirements",
         "Program laser machine beam toolpaths using Coherent LIGHTCELL-150 software",
+        "Create 3D printing part for mounting and installation",
       ],
     },
     {
